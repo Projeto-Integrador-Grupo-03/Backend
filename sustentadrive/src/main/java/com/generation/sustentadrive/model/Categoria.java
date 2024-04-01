@@ -16,13 +16,13 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message = "O tipo é obrigatorio")
+	@NotBlank(message = "O nome é obrigatorio")
 	@Size(min = 4, max = 40, message = "O atributo tipo de conter no minimo 4 e no maximo 40 caracteres ")
-	private String tipo;
+	private String nome;
 	
-	@NotBlank(message = "O estado é obrigatorio")
-	@Size(min = 4, max = 40, message = "O atributo estado de conter no minimo 4 e no maximo 40 caracteres ")
-	private String estado;
+	@NotBlank(message = "A descrição é obrigatorio")
+	@Size(min = 10, max = 1000, message = "O atributo estado de conter no minimo 10 e no maximo 1000 caracteres ")
+	private String descricao;
 
 	public Long getId() {
 		return id;
@@ -32,20 +32,20 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getEstado() {
-		return estado;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
 	
