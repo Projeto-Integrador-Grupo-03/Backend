@@ -17,7 +17,7 @@ public class Usuario {
 	private long id;
 	
 	@NotBlank(message = "O atributo Nome é Obrigatório")
-	@Size(min = 5, max = 100, message = "Tamanho mínimo: 5, maximo: 100")
+	@Size(min = 3, max = 100, message = "Tamanho mínimo: 3, maximo: 100")
 	private String nome;
 
 	@NotBlank(message = "O atributo Login é Obrigatório")
@@ -25,7 +25,7 @@ public class Usuario {
 	private String login;
 	
 	@NotBlank(message = "O atributo Senha é Obrigatório")
-	@Size(min = 5, max = 30, message = "Tamanho mínimo: 5, maximo: 30")
+	@Size(min = 8, message = "Tamanho mínimo: 8")
 	private String senha;
 	
 	@Size(min = 5, max = 1000, message = "Tamanho mínimo: 5, maximo: 1000")
