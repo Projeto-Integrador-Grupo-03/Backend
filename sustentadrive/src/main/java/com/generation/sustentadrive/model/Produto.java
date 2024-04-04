@@ -28,7 +28,7 @@ public class Produto {
 	private String nome;
 	
 	@NotBlank(message = "O atributo Cor é Obrigatório")
-	@Size(min = 5, max = 100, message = "Tamanho mínimo: 5, maximo: 100")
+	@Size(min = 4, max = 100, message = "Tamanho mínimo: 4, maximo: 100")
 	private String cor;
 	
 	@NotBlank(message = "O atributo Modelo é Obrigatório")
@@ -36,7 +36,7 @@ public class Produto {
 	private String modelo;
 	
 	@NotNull(message = "O atributo Ano é Obrigatório")
-	@Size(min = 4, max = 4 , message = "Tamanho mínimo: 4, maximo: 4")
+	//@Size(min = 3, max = 5 , message = "Tamanho mínimo: 3, maximo: 5")
 	private int ano;
 	
 	@NotNull(message = "O atributo preço é Obrigatório")
