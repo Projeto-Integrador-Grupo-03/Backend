@@ -1,10 +1,18 @@
 package com.generation.sustentadrive.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -21,7 +29,7 @@ public class Usuario {
 	private String nome;
 
 	@NotBlank(message = "O atributo Login é Obrigatório")
-	@Size(min = 5, max = 100, message = "Tamanho mínimo: 5, maximo: 100")
+	@Email(message = "O Atributo Usuário deve ser um email válido!")
 	private String login;
 	
 	@NotBlank(message = "O atributo Senha é Obrigatório")
@@ -30,6 +38,10 @@ public class Usuario {
 	
 	@Size(min = 5, max = 1000, message = "Tamanho mínimo: 5, maximo: 1000")
 	private String foto;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("usuario")
+	private List<Produto> produto;
 
 	public long getId() {
 		return id;
@@ -70,6 +82,16 @@ public class Usuario {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
+	
+	
 	
 	
 }
