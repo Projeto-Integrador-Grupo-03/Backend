@@ -16,11 +16,11 @@ import io.swagger.v3.oas.models.responses.ApiResponses;
 public class SwaggerConfig {
 
 	@Bean
-	OpenAPI springBlogPessoalOpenAPI() {
+	OpenAPI springSustentaDriveOpenAPI() {
 		return new OpenAPI()
 				.info(new Info()
 						.title("Projeto Integrador Grupo-03")
-						.description("Projeto de Conclusão de Curso - Generation Braisl")
+						.description("Projeto de Conclusão de Curso - Generation Brasil")
 						.version("v0.0.1")
 						.license(new License()
 								.name("Generation Brasil")
